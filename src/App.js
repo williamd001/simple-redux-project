@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Note from "./components/Note";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    let notes = [
+        {
+            'title': 'a title',
+            'content': 'some content,'
+        },
+        {
+            'title': 'another title',
+            'content': 'some more content',
+        },
+    ];
+
+    return notes.map((note, index) => {
+        return <Note key={index} title={note.title} content={note.content}/>;
+    });
 }
 
 export default App;
