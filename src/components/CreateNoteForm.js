@@ -1,14 +1,22 @@
 import React, {useState} from 'react';
+import {useDispatch} from "react-redux";
 
 function CreateNoteForm() {
 
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const dispatch = useDispatch();
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        //todo dispatch react
+        dispatch(
+            {
+                'type': 'ADD_NOTE',
+                'title': title,
+                'body': body,
+            }
+        );
 
         setTitle('');
         setBody('');
@@ -28,7 +36,7 @@ function CreateNoteForm() {
             />
 
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="note">
-                note body
+                Note body
             </label>
 
             <textarea name="body" id="note"
