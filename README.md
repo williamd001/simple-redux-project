@@ -1,4 +1,4 @@
-##Project Overview
+## Project Overview
 
 This project is a simple note taking app developed using react, redux and tailwindcss.
 
